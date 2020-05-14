@@ -1,0 +1,456 @@
+﻿<%@ master language="C#" autoeventwireup="true" inherits="SiteMaster, App_Web_x2nqc0yb" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>.:Wiphala sistemas::e pyme:. </title>
+    <meta charset="utf-8">
+    <!-- CSS -->
+    <link href="/e-PymeWeb/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/e-PymeWeb/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="/e-PymeWeb/jquery-ui-1.11.0/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="/e-PymeWeb/css/style-switcher.css" rel="stylesheet" type="text/css" />
+<%--    <link href="/e-PymeWeb/css/skins/darkblue.css" rel="stylesheet" type="text/css" />
+    <link href="/e-PymeWeb/css/skins/darkbrown.css" rel="stylesheet" type="text/css" />
+    <link href="/e-PymeWeb/css/skins/yellow.css" rel="stylesheet" type="text/css" />
+    <link href="/e-PymeWeb/css/skins/lightgreen.css" rel="stylesheet" type="text/css" />
+    <link href="/e-PymeWeb/css/skins/orange.css" rel="stylesheet" type="text/css" />
+    <link href="/e-PymeWeb/css/skins/red.css" rel="stylesheet" type="text/css" />
+    <link href="/e-PymeWeb/css/skins/slategray.css" rel="stylesheet" type="text/css" />
+    <link href="/e-PymeWeb/css/skins/teal.css" rel="stylesheet" type="text/css" />
+    
+    <link href="/e-PymeWeb/css/skins/fulldark.css" rel="stylesheet" type="text/css" />
+    <link href="/e-PymeWeb/css/skins/fullbright.css" rel="stylesheet" type="text/css" />--%>
+    <link href="/e-PymeWeb/css/main.css" rel="stylesheet" type="text/css" />
+    <!-- Javascript -->
+    <script src="/e-PymeWeb/js/jquery-2.1.0.min.js"></script>
+    <script src="/e-PymeWeb/js/jquery-ui-1.10.4.custom.js" type="text/javascript"></script>
+    <script src="/e-PymeWeb/jquery-ui-1.11.0/jquery-ui.js" type="text/javascript"></script>
+    <script src="/e-PymeWeb/js/bootstrap.js"></script>
+    <script src="/e-PymeWeb/js/modernizr.js"></script>
+    <script src="/e-PymeWeb/js/bootstrap-tour.custom.js"></script>
+    <script src="/e-PymeWeb/js/king-common.min.js"></script>
+    <script src="/e-PymeWeb/js/stat/jquery.easypiechart.min.js"></script>
+    <script src="/e-PymeWeb/js/raphael-2.1.0.min.js"></script>
+    <script src="/e-PymeWeb/js/stat/flot/jquery.flot.min.js"></script>
+    <script src="/e-PymeWeb/js/stat/flot/jquery.flot.resize.min.js"></script>
+    <script src="/e-PymeWeb/js/stat/flot/jquery.flot.time.min.js"></script>
+    <script src="/e-PymeWeb/js/stat/flot/jquery.flot.pie.min.js"></script>
+    <script src="/e-PymeWeb/js/stat/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="/e-PymeWeb/js/jquery.sparkline.min.js"></script>
+    <script src="/e-PymeWeb/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="/e-PymeWeb/js/datatable/jquery.dataTables.bootstrap.js"></script>
+    <script src="/e-PymeWeb/js/jquery.mapael.js"></script>
+    <script src="/e-PymeWeb/js/king-chart-stat.min.js"></script>
+    <script src="/e-PymeWeb/js/king-table.min.js"></script>
+    <script src="/e-PymeWeb/js/king-components.min.js"></script>
+    <script src="/e-PymeWeb/js/deliswitch.js" type="text/javascript"></script>
+    <script src="/e-PymeWeb/js/bootstrap.touchspin.js" type="text/javascript"></script>
+    <script src="/e-PymeWeb/js/king-elements.min.js" type="text/javascript"></script>
+    <script src="/e-PymeWeb/js/bootstrap-tagsinput.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var availableTags = [
+        "DNI",
+        "CI",
+        "LE",
+        "LC",
+        "PASS"
+    ];
+            var availableTagsavailableTagsProvincia = [
+        "CAPITAL FEDERAL",
+        "BUENOS AIRES",
+        "SANTA FE",
+        "ENTRE RIOS",
+        "CORRIENTES",
+        "MISIONES",
+        "CHACO",
+        "FORMOSA",
+        "SANTIAGO DEL ESTERO",
+        "SALTA",
+        "JUJUY",
+        "TUCUMAN",
+       "CATAMARCA",
+       "LA RIOJA",
+       "CORDOBA",
+       "SAN JUAN",
+       "SAN LUIS",
+       "NEUQUEN",
+       "CHUBUT",
+       "LA PAMPA",
+       "RIO NEGRO",
+       "SANTA CRUZ",
+       "TIERRA DEL FUEGO"
+    ];
+            $("#MainContent_txtTipoDocumento").autocomplete({
+                source: availableTags
+            });
+            $("#MainContent_txtProvincia").autocomplete({
+                source: availableTagsavailableTagsProvincia
+            });
+            $("#show").click(function () {
+                $("#editClave").modal("show");
+            });
+
+
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="dashboard">
+    <form id="form1" runat="server">
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+    <div class="wrapper">
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <!-- logo -->
+                    <div class="col-md-2 ">
+                        <h4>
+                            <a href="/e-PymeWeb/Default.aspx">e-Pyme::.</a></h4>
+                        <h1 class="sr-only">
+                            e-Pyme::.</h1>
+                    </div>
+                    <!-- end logo -->
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="top-bar-right">
+                                    <!-- responsive menu bar icon -->
+                                    <a href="#" class="hidden-md hidden-lg main-nav-toggle"><i class="fa fa-bars"></i>
+                                    </a>
+                                    <div class=" notifications">
+                                        <ul>
+                                            <li class="notification-item general">
+                                                <div class="btn-group">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-book fa-fw">
+                                                    </i > Acerca de </a>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li class="notification-header"><em>Wiphala Sistemas</em> </li>
+                                                        <li class="inbox-item clearfix"><a href="http://www.wiphalasistemas.com.ar" target="_blank">
+                                                            <div class="media">
+                                                                <div class="pull-left" href="#">
+                                                                    <img class="media-object" src="/e-PymeWeb/imagenes/logo50x41.png" alt="Wiphala Sistemas">
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h5 class="media-heading name">
+                                                                        Wiphala Sistemas</h5>
+                                                                    <p class="text">
+                                                                        Rosario-2000-Santa Fe-Argentina
+                                                                    </p>
+                                                                    <p>
+                                                                        <i class="fa fa-phone"></i>341-6860769 // 336-4588649</p>
+                                                                </div>
+                                                            </div>
+                                                        </a></li>
+                                                        <li><a href="mailto:contacto@wiphalasistemas.com.ar"><i class="fa fa-envelope-o"></i>
+                                                            contacto@wiphalasistemas.com.ar </a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="logged-user">
+                                        <div class="btn-group">
+                                            <a href="#" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user">
+                                            </i><span class="name">
+                                                <asp:Label ID="lblUsuario" runat="server" Text=""></asp:Label></span> <span class="caret">
+                                                </span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li>
+                                                    <a id="show" href="#"><i class="fa fa-user"></i><span class="text"> Modificar Clave</span></a>
+                                                </li>
+                                                <li><a href="/e-PymeWeb/Logout.aspx"><i class="fa fa-power-off"></i><span class="text" > Salir</span> </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- end logged user and the menu -->
+                                </div>
+                                <!-- /top-bar-right -->
+                            </div>
+                        </div>
+                        <!-- /row -->
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /top -->
+        <!-- BOTTOM: LEFT NAV AND RIGHT MAIN CONTENT -->
+        <div class="bottom">
+            <div class="container">
+                <div class="row">
+                    <!-- left sidebar -->
+                    <div class="col-md-2 left-sidebar">
+                        <!-- main-nav -->
+                        <nav class="main-nav">
+                            <asp:Literal ID="LiteralMenu" runat="server"></asp:Literal>
+                            <%--<ul class="main-menu">--%>
+                            <%--<li class="active"><a href="index.html"><i class="fa fa-dashboard fa-fw"></i><span
+                                    class="text">Dashboard</span></a></li>
+                                <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-clipboard fa-fw"></i><span
+                                    class="text">Pages</span> <i class="toggle-icon fa fa-angle-left"></i></a>
+                                    <ul class="sub-menu ">
+                                        <li><a href="page-profile.html"><span class="text">Profile</span></a></li>
+                                        <li><a href="page-invoice.html"><span class="text">Invoice</span></a></li>
+                                        <li><a href="page-knowledgebase.html"><span class="text">Knowledge Base</span></a></li>
+                                        <li><a href="page-inbox.html"><span class="text">Inbox</span></a></li>
+                                        <li><a href="page-register.html"><span class="text">Register</span></a></li>
+                                        <li><a href="page-login.html"><span class="text">Login</span></a></li>
+                                        <li><a href="page-404.html"><span class="text">404</span></a></li>
+                                        <li><a href="page-blank.html"><span class="text">Blank Page</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-bar-chart-o fw"></i><span
+                                    class="text">Charts &amp; Statistics</span> <i class="toggle-icon fa fa-angle-left">
+                                    </i></a>
+                                    <ul class="sub-menu ">
+                                        <li><a href="charts-statistics.html"><span class="text">Charts</span></a></li>
+                                        <li><a href="charts-statistics-interactive.html"><span class="text">Interactive Charts</span></a></li>
+                                        <li><a href="charts-statistics-real-time.html"><span class="text">Realtime Charts</span></a></li>
+                                        <li><a href="charts-d3charts.html"><span class="text">D3 Charts</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-edit fw"></i><span class="text">
+                                    Forms</span> <i class="toggle-icon fa fa-angle-left"></i></a>
+                                    <ul class="sub-menu ">
+                                        <li><a href="form-inplace-editing.html"><span class="text">In-place Editing <span
+                                            class="badge element-bg-color-blue">New</span></span></a></li>
+                                        <li><a href="form-elements.html"><span class="text">Form Elements <span class="badge element-bg-color-blue">
+                                            Updated</span></span></a></li>
+                                        <li><a href="form-layouts.html"><span class="text">Form Layouts <span class="badge element-bg-color-blue">
+                                            New</span></span></a></li>
+                                        <li><a href="form-bootstrap-elements.html"><span class="text">Bootstrap Elements <span
+                                            class="badge element-bg-color-blue">New</span></span></a></li>
+                                        <li><a href="form-validations.html"><span class="text">Validation</span></a></li>
+                                        <li><a href="form-file-upload.html"><span class="text">File Upload</span></a></li>
+                                        <li><a href="form-text-editor.html"><span class="text">Text Editor <span class="badge element-bg-color-blue">
+                                            New</span></span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-list-alt fw"></i><span
+                                    class="text">UI Elements</span> <i class="toggle-icon fa fa-angle-left"></i></a>
+                                    <ul class="sub-menu ">
+                                        <li><a href="ui-elements-general.html"><span class="text">General Elements</span></a></li>
+                                        <li><a href="ui-elements-buttons.html"><span class="text">Buttons <span class="badge element-bg-color-blue">
+                                            Updated</span></span></a></li>
+                                        <li><a href="ui-elements-icons.html"><span class="text">Icons</span></a></li>
+                                        <li><a href="ui-elements-flash-message.html"><span class="text">Flash Message</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="widgets.html"><i class="fa fa-puzzle-piece fa-fw"></i><span class="text">
+                                    Widgets</span></a></li>
+                                <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-gears fw"></i><span class="text">
+                                    Components</span> <i class="toggle-icon fa fa-angle-left"></i></a>
+                                    <ul class="sub-menu ">
+                                        <li><a href="components-wizard.html"><span class="text">Wizard (with validation)</span></a></li>
+                                        <li><a href="components-calendar.html"><span class="text">Calendar</span></a></li>
+                                        <li><a href="components-maps.html"><span class="text">Maps</span></a></li>
+                                        <li><a href="components-gallery.html"><span class="text">Gallery</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-table fw"></i><span class="text">
+                                    Tables</span> <i class="toggle-icon fa fa-angle-left"></i></a>
+                                    <ul class="sub-menu ">
+                                        <li><a href="tables-static-table.html"><span class="text">Static Table</span></a></li>
+                                        <li><a href="tables-dynamic-table.html"><span class="text">Dynamic Table</span></a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="typography.html"><i class="fa fa-font fa-fw"></i><span class="text">Typography</span></a></li>--%>
+                            <%--</ul>--%>
+                        </nav><!-- /main-nav -->
+                        <div class="sidebar-minified js-toggle-minified">
+                            <i class="fa fa-angle-left"></i>
+                        </div>
+                        <!-- sidebar content -->
+                        <div class="sidebar-content">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h5>
+                                        <i class="fa fa-lightbulb-o"></i>Tips</h5>
+                                </div>
+                                <div class="panel-body">
+                                    <p>
+                                        Disfrute de la nueva interface de e-Pyme de <a href="http://www.wiphalasistemas.com.ar"
+                                            target="_blank">Wiphala Sistemas</a></p>
+                                </div>
+                            </div>
+                            <%--                            <h5 class="label label-default">
+                                <i class="fa fa-info-circle"></i>Server Info</h5>
+                            <ul class="list-unstyled list-info-sidebar bottom-30px">
+                                <li class="data-row"><span class="data-name">Disk Space Usage</span> <span class="data-value">
+                                    274.43 / 2 GB
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10"
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+                                            <span class="sr-only">10%</span>
+                                        </div>
+                                    </div>
+                                </span></li>
+                                <li class="data-row"><span class="data-name">Monthly Bandwidth Transfer</span> <span
+                                    class="data-value">230 / 500 GB
+                                    <div class="progress progress-xs">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="46"
+                                            aria-valuemin="0" aria-valuemax="100" style="width: 46%">
+                                            <span class="sr-only">46%</span>
+                                        </div>
+                                    </div>
+                                </span></li>
+                                <li class="data-row"><span class="data-name">Database Disk Space</span> <span class="data-value">
+                                    219.45 MB</span> </li>
+                                <li class="data-row"><span class="data-name">Operating System</span> <span class="data-value">
+                                    Linux</span> </li>
+                                <li class="data-row"><span class="data-name">Apache Version</span> <span class="data-value">
+                                    2.4.6</span> </li>
+                                <li class="data-row"><span class="data-name">PHP Version</span> <span class="data-value">
+                                    5.3.27</span> </li>
+                                <li class="data-row"><span class="data-name">MySQL Version</span> <span class="data-value">
+                                    5.5.34-cll</span> </li>
+                                <li class="data-row"><span class="data-name">Architecture</span> <span class="data-value">
+                                    x86_64</span> </li>
+                            </ul>--%>
+                        </div>
+                        <!-- end sidebar content -->
+                    </div>
+                    <!-- end left sidebar -->
+                    <!-- content-wrapper -->
+                    <div class="col-md-10 content-wrapper" style="min-height: 900px">
+                        <!-- main -->
+                        <div class="content">
+                            <div class="main-content">
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                            </div>
+                            <!-- /main-content -->
+                        </div>
+                        <!-- /main -->
+                    </div>
+                    <!-- /content-wrapper -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- END BOTTOM: LEFT NAV AND RIGHT MAIN CONTENT -->
+        <div class="push-sticky-footer">
+        </div>
+    </div>
+    <!-- /#wrapper -->
+    <footer class="footer">
+        <a href="http://www.wiphalasistemas.com.ar" target="_blank">© 2013 e-Pyme :: WiphalaSistemas
+        </a>
+    </footer>
+    <div class="del-style-switcher">
+        <div class="del-switcher-toggle toggle-hide">
+        </div>
+        <section class="del-section del-section-skin">
+            <h5 class="del-switcher-header">
+                Cambiar Skin</h5>
+            <ul>
+                <li><a href="#" title="Slate Gray" class="switch-skin slategray" data-skin="/e-PymeWeb/css/skins/slategray.css">
+                    Slate Gray</a> </li>
+                <li><a href="#" title="Dark Blue" class="switch-skin darkblue" data-skin="/e-PymeWeb/css/skins/darkblue.css">
+                    Dark Blue</a> </li>
+                <li><a href="#" title="Dark Brown" class="switch-skin darkbrown" data-skin="/e-PymeWeb/css/skins/darkbrown.css">
+                    Dark Brown</a> </li>
+                <li><a href="#" title="Light Green" class="switch-skin lightgreen" data-skin="/e-PymeWeb/css/skins/lightgreen.css">
+                    Light Green</a> </li>
+                <li><a href="#" title="Orange" class="switch-skin orange" data-skin="/e-PymeWeb/css/skins/orange.css">
+                    Orange</a> </li>
+                <li><a href="#" title="Red" class="switch-skin red" data-skin="/e-PymeWeb/css/skins/red.css">
+                    Red</a> </li>
+                <li><a href="#" title="Teal" class="switch-skin teal" data-skin="/e-PymeWeb/css/skins/teal.css">
+                    Teal</a> </li>
+                <li><a href="#" title="Yellow" class="switch-skin yellow" data-skin="/e-PymeWeb/css/skins/yellow.css">
+                    Yellow</a> </li>
+            </ul>
+            <button type="button" class="switch-skin-full fulldark" data-skin="/e-PymeWeb/css/skins/fulldark.css">
+                Full Dark</button>
+            <button type="button" class="switch-skin-full fullbright" data-skin="/e-PymeWeb/css/skins/fullbright.css">
+                Full Bright</button>
+        </section>
+        <p>
+            <a href="#" title="Reset Style" class="del-reset-style">Resetear Estilo</a>
+        </p>
+    </div>
+    <!-- Edit Record Modal Starts here-->
+    <div id="editClave" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×</button>
+                <h3 id="H1">
+                    Modificar Clave Usuario</h3>
+            </div>
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                    <div class="modal-body">
+                        <asp:Panel ID="panelErr" Visible="true" runat="server">
+                            <div class="alert alert-danger alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                                    ×</button>
+                                <asp:Label ID="lblErr" runat="server" Text=""></asp:Label>
+                            </div>
+                        </asp:Panel>
+                        <asp:Panel ID="panelMens" Visible="true" runat="server">
+                            <div class="alert alert-success alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                                    ×</button>
+                                <asp:Label ID="lblMens" runat="server" Text=""></asp:Label>
+                            </div>
+                        </asp:Panel>
+                        <table class="table table-bordered table-hover">
+                            <tr>
+                                <td>
+                                    Clave Anterior
+                                    <asp:TextBox ID="txtClaveAnterior"
+                                        runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Clave
+                                    <asp:TextBox ID="txtClaveModificar" 
+                                        runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Reingrese Clave
+                                    <asp:TextBox ID="txtClaveReingresadaModificar" runat="server" CssClass="form-control"
+                                        TextMode="Password"></asp:TextBox>
+                                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtClaveReingresadaModificar"
+                                        ControlToValidate="txtClaveModificar" ForeColor="Red" ErrorMessage="Las claves deben ser iguales"
+                                        ValidationGroup="modifClave"></asp:CompareValidator>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="btnModificar" runat="server" Text="Modificar" CssClass="btn btn-success"
+                            CausesValidation="true" ValidationGroup="modifClave" OnClick="btnModificar_Click" />
+                        <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">
+                            Cancelar</button>
+                    </div>
+                </ContentTemplate>
+                <%--<Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="btnAddRecord" EventName="Click" />
+                </Triggers>--%>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+    <!--Edit Record Modal Ends here-->
+    </form>
+</body>
+</html>
